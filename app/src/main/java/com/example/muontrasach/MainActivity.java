@@ -47,18 +47,10 @@ public class MainActivity extends AppCompatActivity {
         String username = user.getText().toString();
         String password = pass.getText().toString();
         if(isLogin() == true ){
-            if(username.equals("admin")){
-                Intent i1 = new Intent(this, HomePageActivity.class);
-                startActivity(i1);
-                Toast toast = Toast.makeText(this,"Login Success with : "+username,Toast.LENGTH_LONG);
-                toast.show();
-            }
-            else{
-                Intent i1 = new Intent(this, GuestActivity.class);
-                startActivity(i1);
-                Toast toast = Toast.makeText(this,"Login Success with guest: "+username,Toast.LENGTH_LONG);
-                toast.show();
-            }
+            Intent i1 = new Intent(this, HomePageActivity.class);
+            startActivity(i1);
+            Toast toast = Toast.makeText(this,"Login Success with : "+username,Toast.LENGTH_LONG);
+            toast.show();
 
         }
         else{
