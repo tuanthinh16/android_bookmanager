@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">MuonTraSach</string>
+    <string name="create">Don\'t have an account ? Regsiter now...</string>
+    <string name="login">LOGIN</string>
+    <string name="usr">Username :</string>
+    <string name="pass">Password :</string>
+    <string name="app_create">Create Account</string>
+    <string name="name">Name :</string>
+    <string name="Re_pas">Re-Password :</string>
+    <string name="email">Email :</string>
+    <string name="Cre">CREATE</string>
+    <string name="app_admin_manager">ADMIN MANAGER</string>
+    <string name="account_mana">Account Managerment</string>
+    <string name="book_mana">Book Managerment</string>
+    <string name="borrow_mana">Borrow Managerment</string>
+    <string name="return_mana">Return Managerment</string>
+    <string name="nameSach">Name</string>
+    <string name="detail">Detail</string>
+    <string name="view">VIEW MORE</string>
+    <string name="borrow">BORROW</string>
+    <string name="addook">Add Book</string>
+    <string name="namebook">Name Book</string>
+    <string name="type">Type</string>
+    <string name="author">Author</string>
+    <string name="nxb">NXB</string>
+    <string name="add">ADD</string>
+    <string name="address">Address</string>
+
+</resources>

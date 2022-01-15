@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="131dp"
+        android:layout_margin="4dp">
+
+        <ImageView
+            android:id="@+id/avt"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/avt"
+            android:layout_toRightOf="@+id/avt"
+            android:text="Sach gaio khoa"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="-2dp"
+            android:layout_toRightOf="@+id/avt"
+            android:text="Line 2" />
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+
+            android:layout_toEndOf="@+id/avt"
+            android:layout_toRightOf="@+id/avt"
+            android:text="Edit" />
+
+        <Button
+            android:id="@+id/btn_del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/btn_edit"
+            android:layout_toRightOf="@+id/btn_edit"
+            android:text="Del" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

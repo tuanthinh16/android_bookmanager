@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">MuonTraSach</string>
+    <string name="create">Bạn chưa có tài khoản ? Đăng ký ngay.....</string>
+    <string name="login">ĐĂNG NHẬP</string>
+    <string name="usr">Tên Tài Khoản :</string>
+    <string name="pass">Mật Khẩu :</string>
+    <string name="app_create">Tạo Tài Khoản Mới</string>
+    <string name="name">Họ Tên :</string>
+    <string name="Re_pas">Nhập Lại Mật Khẩu :</string>
+    <string name="email">Hòm Thư Điện Tử :</string>
+    <string name="Cre">ĐĂNG KÝ</string>
+    <string name="app_admin_manager">Quản Trị Viên</string>
+    <string name="account_mana">Quản Lý Tài Khoản</string>
+    <string name="book_mana">Quản Lý Sách</string>
+    <string name="borrow_mana">Quản Lý Cho Mượn</string>
+    <string name="return_mana">Quản Lý Trả</string>
+    <string name="nameSach">Tên Sách</string>
+    <string name="detail">Chi tiết</string>
+    <string name="view">XEM THÊM</string>
+    <string name="borrow">MƯỢN</string>
+    <string name="addook">Thêm Sách</string>
+    <string name="namebook">Tên Sách</string>
+    <string name="type">Thể Loại</string>
+    <string name="author">Tác Giả</string>
+    <string name="nxb">NXB</string>
+    <string name="add">THÊM</string>
+    <string name="address">Địa Chỉ</string>
+</resources>
