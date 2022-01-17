@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="399dp"
+        android:layout_height="158dp"
+        android:layout_margin="4dp"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/tvHoten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:text="Họ tên"
+            android:textColor="#FF9800"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvUsr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvHoten"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:text="Username"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvUsr"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:text="Email"
+            android:textColor="#127016"
+            android:textSize="17dp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/tv_diachi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvEmail"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:text="Địa chỉ" />
+        <TextView
+            android:id="@+id/tv_countsach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_diachi"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:text="Số sách mượn" />
+
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="150dp"
+            android:background="@drawable/edit" />
+
+        <Button
+            android:id="@+id/btn_del"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/btn_edit"
+            android:layout_toRightOf="@+id/btn_confirm"
+            android:background="@drawable/del" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

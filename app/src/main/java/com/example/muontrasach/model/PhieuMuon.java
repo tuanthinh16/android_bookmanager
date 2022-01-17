@@ -6,13 +6,13 @@ public class PhieuMuon {
     String Date;
     String Person_Muon;
     String Time;
-    String TrangThai;
+    int TrangThai;
 
-    public String getTrangThai() {
+    public int getTrangThai() {
         return TrangThai;
     }
 
-    public void setTrangThai(String trangThai) {
+    public void setTrangThai(int trangThai) {
         TrangThai = trangThai;
     }
 

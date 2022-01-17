@@ -25,4 +25,8 @@
     <string name="nxb">NXB</string>
     <string name="add">THÊM</string>
     <string name="address">Địa Chỉ</string>
+    <string name="home">Trang Chủ</string>
+    <string name="app_account">Quản Lý Tài Khoản</string>
+    <string name="app_borrow">Quản Lý Cho Mượn</string>
+    <string name="app_addbook">Thêm Sách</string>
 </resources>

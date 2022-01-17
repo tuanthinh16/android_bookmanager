@@ -2,14 +2,17 @@ package com.example.muontrasach;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.example.muontrasach.model.Account;
 import com.example.muontrasach.SQL.AccountReaderSQLite;
+import com.example.muontrasach.model.Book;
 
 import java.util.List;
 
@@ -18,23 +21,30 @@ public class MainActivity extends AppCompatActivity {
     private EditText pass;
     private Button btnLogin;
     private AccountReaderSQLite accountReaderSQLite;
+    String username = "";
+    private Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         user = (EditText) findViewById(R.id.txtUsername);
         pass = (EditText) findViewById(R.id.txtPassowrd);
         btnLogin = (Button) findViewById(R.id.btnLogin);
+
         accountReaderSQLite = new AccountReaderSQLite(this);
+
     }
 
     private boolean isLogin(){
         String username = user.getText().toString();
         String password = pass.getText().toString();
+
         List<Account> accountList = accountReaderSQLite.getAllAccount();
         for(int i = 0; i < accountList.size(); i++){
             if(accountList.get(i).getUsername().equals(username) && accountList.get(i).getPassword().equals(password)){
                 //Toast.makeText(this, "Dung roi", Toast.LENGTH_SHORT).show();
+
                 return true;
             }
 
@@ -44,18 +54,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void Login(View v){
-        String username = user.getText().toString();
+        username = user.getText().toString();
         String password = pass.getText().toString();
         if(isLogin() == true ){
-            Intent i1 = new Intent(this, HomePageActivity.class);
+            Intent i1 = new Intent(MainActivity.this, HomePageActivity.class);
+            i1.putExtra("username",username);
             startActivity(i1);
-            Toast toast = Toast.makeText(this,"Login Success with : "+username,Toast.LENGTH_LONG);
-            toast.show();
+            //Toast toast = Toast.makeText(MainActivity.this,"Login Success with : "+username,Toast.LENGTH_SHORT);
+            //toast.show();
 
         }
         else{
             String msg = "user: "+username +" -- pass: "+password;
-            Toast toast = Toast.makeText(this,msg,Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(MainActivity.this,msg,Toast.LENGTH_LONG);
             toast.show();
         }
     }

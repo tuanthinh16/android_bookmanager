@@ -12,6 +12,7 @@ public class HomePageActivity extends AppCompatActivity {
     private Button btnBook;
     private Button btnBorrow;
     private Button btnReturn;
+    String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,21 +22,24 @@ public class HomePageActivity extends AppCompatActivity {
         btnBook = (Button)findViewById(R.id.btnBook);
         btnBorrow = (Button)findViewById(R.id.btnBorrow);
         btnReturn = (Button)findViewById(R.id.btnReturn);
+        username = getIntent().getStringExtra("username");
     }
     public void goAccount(View v){
-        Intent i1 = new Intent(this, BookManagerActivity.class);
+        Intent i1 = new Intent(this, Account_ManagerActivity.class);
         startActivity(i1);
     }
     public void goBook(View v){
         Intent i1 = new Intent(this, BookManagerActivity.class);
+        i1.putExtra("username",username);
         startActivity(i1);
     }
     public void goBorrow(View v){
-        Intent i1 = new Intent(this, BookManagerActivity.class);
+        Intent i1 = new Intent(this, Borrow_ManagerActivity.class);
+        i1.putExtra("username",username);
         startActivity(i1);
     }
     public void goReturn(View v){
-        Intent i1 = new Intent(this, BookManagerActivity.class);
+        Intent i1 = new Intent(this, Return_BookActivity.class);
         startActivity(i1);
     }
 }

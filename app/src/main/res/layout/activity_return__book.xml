@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Borrow_ManagerActivity">
+    tools:context=".Return_BookActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listborrow"
+        android:id="@+id/listreturn"
         android:layout_width="match_parent"
         android:layout_height="534dp"
-        android:padding="4dp"
-        android:scrollbars="vertical" />
-
+        android:padding="4dp"/>
     <Button
         android:id="@+id/btnHome"
         android:layout_width="50dp"

@@ -9,8 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Borrow.Borrow_ManagerActivity"></activity>
-        <activity android:name=".AddBookActivity" />
+        <activity android:name=".Return_BookActivity"></activity>
+        <activity
+            android:name=".Account_ManagerActivity"
+            android:label="@string/app_account" />
+        <activity
+            android:name=".Borrow_ManagerActivity"
+            android:label="@string/app_borrow" />
+        <activity
+            android:name=".AddBookActivity"
+            android:label="@string/app_addbook" />
         <activity
             android:name=".BookManagerActivity"
             android:label="@string/book_mana" />

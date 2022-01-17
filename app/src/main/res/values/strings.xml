@@ -25,5 +25,8 @@
     <string name="nxb">NXB</string>
     <string name="add">ADD</string>
     <string name="address">Address</string>
-
+    <string name="home">Home</string>
+    <string name="app_account">Account Managerment</string>
+    <string name="app_borrow">Borrow Managerment</string>
+    <string name="app_addbook">ADD Book</string>
 </resources>

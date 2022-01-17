@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="399dp"
+        android:layout_height="158dp"
+        android:layout_margin="4dp"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/tvBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:text="Ten Sach Muon"
+            android:textColor="#FF9800"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvBook"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:text="ID phieu muon"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tv_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvID"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:text="Ten nguoi muon"
+            android:textColor="#127016"
+            android:textSize="17dp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_person"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:text="Ngay Dang Ky" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_date"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:text="Tinh Trang"
+            android:textColor="#D54343" />
+
+        <Button
+            android:id="@+id/btn_del"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginEnd="128dp"
+            android:layout_marginRight="128dp"
+            android:layout_marginBottom="4dp"
+            android:layout_toEndOf="@+id/btn_confirm"
+            android:layout_toRightOf="@+id/btn_confirm"
+            android:background="@drawable/del" />
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="150dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/confirm" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -25,6 +25,7 @@
             android:layout_toEndOf="@+id/avt"
             android:layout_toRightOf="@+id/avt"
             android:text="Sach gaio khoa"
+            android:textColor="#FF9800"
             android:textSize="20dp"
             android:textStyle="bold" />
 
@@ -36,27 +37,48 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="-2dp"
             android:layout_toRightOf="@+id/avt"
-            android:text="Line 2" />
+            android:text="Line 2"
+            android:textColor="#2E9C33" />
 
         <Button
             android:id="@+id/btn_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentBottom="true"
 
+            android:layout_marginStart="115dp"
+            android:layout_marginLeft="115dp"
+            android:layout_marginBottom="6dp"
             android:layout_toEndOf="@+id/avt"
             android:layout_toRightOf="@+id/avt"
-            android:text="Edit" />
+            android:background="@drawable/edit"
+            android:textColor="#4CAF50" />
+
+        <Button
+            android:id="@+id/btn_borrow"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="6dp"
+            android:layout_toEndOf="@+id/btn_del"
+            android:layout_toRightOf="@+id/btn_del"
+            android:background="@drawable/borrow"
+            android:textColor="#009688" />
 
         <Button
             android:id="@+id/btn_del"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginBottom="6dp"
             android:layout_toEndOf="@+id/btn_edit"
             android:layout_toRightOf="@+id/btn_edit"
-            android:text="Del" />
+            android:background="@drawable/del"
+            android:textColor="#DA0909" />
 
     </RelativeLayout>
 

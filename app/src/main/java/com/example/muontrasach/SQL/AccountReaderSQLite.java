@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.example.muontrasach.model.Account;
 import com.example.muontrasach.model.Book;
@@ -33,7 +34,7 @@ public class AccountReaderSQLite extends SQLiteOpenHelper {
     public static final String COLUM_NXB = "NXB";
 
     public static final String TABLE_NAME_MUON ="MUON";
-    public static final String COLUM_ID_MUON = "Id";
+    public static final String COLUM_ID_MUON = "Id_PHIEUMUON";
     public static final String COLUM_BOOK_MUON = "MaSachMUON";
     public static final String COLUM_DATE = "NgayMuon";
     public static final String COLUM_PERSON_MUON = "MaNguoiMuon";
@@ -56,12 +57,12 @@ public class AccountReaderSQLite extends SQLiteOpenHelper {
                         COLUM_AUTHOR+" VARCHAR(100),"+
                         COLUM_NXB+" VARCHAR(200)) ");
         db.execSQL("CREATE TABLE "+TABLE_NAME_MUON+
-                    "("+COLUM_ID_MUON+"INTEGER PRIMARY KEY,"+
+                    "("+COLUM_ID_MUON+ " INTEGER PRIMARY KEY,"+
                         COLUM_BOOK_MUON+" VARCHAR(100),"+
                         COLUM_DATE+" VARCHAR(100),"+
                         COLUM_PERSON_MUON+" VARCHAR(100)," +
                         COLUM_TIME+" VARCHAR(100),"+
-                        COLUM_STATUS_MUON+" VARCHAR(50))");
+                        COLUM_STATUS_MUON+" INTEGER)");
     }
 
     @Override
@@ -198,7 +199,9 @@ public class AccountReaderSQLite extends SQLiteOpenHelper {
         return books;
     }
             //------------------------------MUON SACH------------------------
+    long rs;
     public long InsertPhieuMuon(PhieuMuon pm){
+
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUM_ID_MUON, pm.getId_Muon());
@@ -208,8 +211,12 @@ public class AccountReaderSQLite extends SQLiteOpenHelper {
         contentValues.put(COLUM_TIME, pm.getTime());
         contentValues.put(COLUM_STATUS_MUON, pm.getTrangThai());
 
+        try{
+             rs = sqLiteDatabase.insert(TABLE_NAME_MUON,null,contentValues);
 
-        long rs = sqLiteDatabase.insert(TABLE_NAME_MUON,null,contentValues);
+        }catch (Exception e){
+            Log.d("sql","loi sql: "+e);
+        }
         return rs;
     }
     public long UpdatePhieuMuon(PhieuMuon pm){
@@ -227,11 +234,11 @@ public class AccountReaderSQLite extends SQLiteOpenHelper {
     }
     public long DelPhieuMuon(PhieuMuon pm){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        return sqLiteDatabase.delete(TABLE_NAME_MUON,COLUM_ID_MUON+"=?",new String[]{pm.getId_Muon()});
+        return sqLiteDatabase.delete(TABLE_NAME_MUON,COLUM_ID_MUON+"=?", new String[]{pm.getId_Muon()});
     }
-    public List<PhieuMuon> getAllPhieuMuon(){
+    public List<PhieuMuon> getAllPhieuMuonChuaTra(){
         List<PhieuMuon> pm = new ArrayList<>();
-        String SELECT = "SELECT * FROM "+ TABLE_NAME_MUON;
+        String SELECT = "SELECT * FROM "+ TABLE_NAME_MUON+" WHERE "+COLUM_STATUS_MUON +" = 0";
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery(SELECT,null);
         if(cursor.getCount() > 0){
@@ -243,7 +250,40 @@ public class AccountReaderSQLite extends SQLiteOpenHelper {
                 String date = cursor.getString(2);
                 String person = cursor.getString(3);
                 String time = cursor.getString(4);
-                String status = cursor.getString(5);
+                int status = Integer.parseInt(cursor.getString(5));
+
+
+                PhieuMuon phieuMuon = new PhieuMuon();
+
+                phieuMuon.setId_Muon(id);
+                phieuMuon.setBook_Muon(book);
+                phieuMuon.setDate(date);
+                phieuMuon.setPerson_Muon(person);
+                phieuMuon.setTime(time);
+                phieuMuon.setTrangThai(status);
+                pm.add(phieuMuon);
+
+                cursor.moveToNext();
+            }
+            cursor.close();
+        }
+        return pm;
+    }
+    public List<PhieuMuon> getAllPhieuMuonDaTra(){
+        List<PhieuMuon> pm = new ArrayList<>();
+        String SELECT = "SELECT * FROM "+ TABLE_NAME_MUON+" WHERE "+COLUM_STATUS_MUON +" = 1";
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery(SELECT,null);
+        if(cursor.getCount() > 0){
+
+            cursor.moveToFirst();
+            while(!cursor.isAfterLast()){
+                String id = cursor.getString(0);
+                String book = cursor.getString(1);
+                String date = cursor.getString(2);
+                String person = cursor.getString(3);
+                String time = cursor.getString(4);
+                int status = Integer.parseInt(cursor.getString(5));
 
 
                 PhieuMuon phieuMuon = new PhieuMuon();
